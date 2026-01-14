@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>JoseManuelDEV | IA & Data Science</title>
 </head>
 <body>
     <header>
@@ -13,59 +14,80 @@
             <div id="branding">
                 <h1><span class="highlight">Jose Manuel</span> Portafolio</h1>
             </div>
-            <nav>
+            <nav class="navigation"> 
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre_mi.html">Sobre Mí</a></li>
-                    <li class="current"><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="sobremi.html">Sobre Mí</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="projects" class="container">
-        <h2>Mis Proyectos</h2>
-        <p class="centrar-text">Aquí puedes ver algunos de los trabajos y proyectos en los que he participado o desarrollado. Reflejan mis habilidades en ciencia de datos, programación y desarrollo web.</p>
-        
-        <div class="projects-grid">
-            <div class="project-item">
-                <img src="img/proyecto-1.png" alt="Descripción del Proyecto 1">
-                <div class="project-item-content">
-                    <h3>Análisis de Datos de Ventas</h3>
-                    <p>Proyecto de universidad/personal donde se realizó un análisis exploratorio de datos de ventas utilizando Python y bibliotecas como Pandas y Matplotlib.</p>
-                    <a href="https://josemanuelweb.github.io/blogdecafe/" target="_blank">Ver Proyecto</a>
+    <main>
+        <section id="projects" class="container">
+            <h2 class="section-title">Ingeniería de Soluciones & Portafolio</h2>
+            
+            <div class="projects-list-unified">
+                
+                <div class="project-card-row">
+                <div class="project-content">
+                    <span class="tag tag-ia">ACTIVO INMOBILIARIO</span>
+                    <h3>Real Estate Data Hunter</h3>
+                    <p>Sistema de prospección con IA. <br>
+                    <strong>Muestra Gratuita:</strong> He dejado 4 oportunidades reales de hoy para que valides la precisión del sistema.</p>
+                    <div class="tech-tags">
+                        <span>Python</span> <span>Scraping</span> <span>Excel Automation</span>
+                    </div>
+                    <a href="https://bot-inmobiliario-pro.onrender.com/" class="btn btn-secondary">Muestra Gratis</a>
+                    <a href="https://github.com/josemanuelweb" class="btn btn-primary">Ver Repositorio GitHub</a>
+                </div>
+                <div class="project-image-container">
+                    <img src="img/AppInmobiliaria.png" alt="App Inmobiliaria">
                 </div>
             </div>
 
-            <div class="project-item">
-                <img src="img/proyecto2.jpg" alt="Descripción del Proyecto 2">
-                <div class="project-item-content">
-                    <h3>Sitio Web Personal Sencillo</h3>
-                    <p>Primer acercamiento al desarrollo web creando un sitio básico con HTML y CSS. Demuestra comprensión de la estructura y estilos web.</p>
-                    <a href="[Link a tu proyecto en GitHub o demostración]" target="_blank">Ver Proyecto</a>
+                <div class="project-card-row">
+                    <div class="project-content">
+                        <span class="tag tag-web">FRONTEND ARCHITECTURE</span>
+                        <h3>Blog de Café - Diseño & Estructura</h3>
+                        <p><strong>El objetivo:</strong> Crear una plataforma de contenidos con arquitectura escalable. <br>
+                        <strong>La solución:</strong> Maquetación avanzada utilizando HTML5 y CSS3 puro para garantizar velocidad de carga y adaptabilidad total.</p>
+                        <div class="tech-tags">
+                            <span>HTML5</span> <span>CSS3</span> <span>Responsive</span> <span>BEM</span>
+                        </div>
+                        <a href="https://github.com/josemanuelweb/blogdecafe" class="btn btn-primary">Ver Repositorio GitHub</a>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="img/proyecto-1.png" alt="Blog de Cafe">
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-item">
-                <img src="img/proyecto3.jpg" alt="Descripción del Proyecto 3">
-                <div class="project-item-content">
-                    <h3>Script de Automatización con Python</h3>
-                    <p>Pequeño script en Python para automatizar una tarea repetitiva (ej: procesamiento de archivos de texto). Muestra habilidades de scripting.</p>
-                    <a href="[Link a tu proyecto en GitHub o demostración]" target="_blank">Ver Proyecto</a>
-                </div>
-            </div>
+                <!--<div class="project-card-row">
+                    <div class="project-content">
+                        <span class="tag tag-data">DATA ANALYSIS</span>
+                        <h3>Análisis Exploratorio de Ventas</h3>
+                        <p><strong>El análisis:</strong> Modelado y limpieza de datos crudos (IFTS#12). <br>
+                        <strong>El impacto:</strong> Transformación de datasets en visualizaciones estratégicas para la toma de decisiones empresariales.</p>
+                        <div class="tech-tags">
+                            <span>Jupyter Notebook</span> <span>Matplotlib</span> <span>Numpy</span>
+                        </div>
+                        <a href="https://github.com/josemanuelweb" class="btn btn-primary">Ver Notebook en GitHub</a>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="img/proyecto3.jpg" alt="Data Analysis">
+                    </div>
+                </div>-->
 
             </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>Jose Manuel &copy; 2025</p>
-        <div class="social-icons" >
-            <a href="https://www.linkedin.com/in/josemanuell/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/josemanuelweb?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-        </div>
+        <div class="social-icons">
+            
     </footer>
 </body>
 </html>
