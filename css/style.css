@@ -78,24 +78,78 @@ header .highlight {
     background: var(--white);
 }
 
-.hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px; }
-.subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary-color); }
-.hero-text { max-width: 750px; margin: 20px auto; }
+.hero h1 { 
+    font-size: 2.5rem; 
+    color: var(--primary-color); 
+    margin-bottom: 10px; 
+}
+.subtitle { 
+    font-size: 1.3rem; 
+    font-weight: 600; 
+    color: var(--secondary-color); 
+}
+.hero-text { 
+    max-width: 750px; 
+    margin: 20px auto; 
+}
 
-.cta-group { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-.btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
-.btn-primary { background: var(--primary-color); color: var(--white); }
-.btn-secondary { border: 2px solid var(--primary-color); color: var(--primary-color); }
-.btn:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.cta-group { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 30px; 
+}
+.btn { 
+    padding: 12px 25px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    display: inline-block; 
+}
+.btn-primary { 
+    background: var(--primary-color); 
+    color: var(--white); 
+}
+.btn-secondary { 
+    border: 2px solid var(--primary-color); 
+    color: var(--primary-color); 
+}
+.btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow); 
+}
 
 /* --- SECCIÓN SOBRE MÍ --- */
-.about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 40px; }
-.about-stack { background: var(--bg-dark); color: var(--white); padding: 25px; border-radius: 10px; }
-.tech-list { list-style: none; padding: 0; }
-.tech-list li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+.about-grid { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px; 
+    margin-top: 40px; 
+}
+.about-stack { 
+    background: var(--bg-dark); 
+    color: var(--white); 
+    padding: 25px; 
+    border-radius: 10px; 
+}
+.tech-list { 
+    list-style: none; 
+    padding: 0; 
+}
+.tech-list li { 
+    margin-bottom: 10px; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 5px; 
+}
 
 /* --- PÁGINA DE PROYECTOS (UNIFICADA) --- */
-.section-title { text-align: center; margin: 50px 0 30px; font-size: 2.2rem; color: var(--primary-color); }
+.section-title { 
+    text-align: center; 
+    margin: 50px 0 30px; 
+    font-size: 2.2rem; 
+    color: var(--primary-color); 
+}
 
 .projects-list-unified {
     display: flex;
@@ -141,24 +195,105 @@ header .highlight {
 }
 
 /* Etiquetas y Tags */
-.tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-bottom: 15px; color: white; }
+.tag { 
+    display: inline-block; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    margin-bottom: 15px; 
+    color: white; 
+}
 .tag-ia { background: #28a745; }
 .tag-web { background: #e83e8c; }
 .tag-data { background: #fd7e14; }
 
-.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0; }
-.tech-tags span { background: #e1ecf4; color: #39739d; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+.tech-tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin: 15px 0; 
+}
+.tech-tags span { 
+    background: #e1ecf4; 
+    color: #39739d; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+}
 
 /* --- FORMULARIO DE CONTACTO --- */
-.contact-card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow); max-width: 650px; margin: 40px auto; }
-.contact-form label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--primary-color); }
-.contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-.contact-form button { width: 100%; background: var(--secondary-color); color: white; border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 6px; }
+.contact-card { 
+    background: var(--white); 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: var(--shadow); 
+    max-width: 650px; 
+    margin: 40px auto; 
+}
+.contact-form label { 
+    display: block; margin-bottom: 5px; 
+    font-weight: bold; 
+    color: var(--primary-color); 
+}
+.contact-form input, 
+.contact-form textarea { 
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+}
+.contact-form button { 
+    width: 100%; 
+    background: var(--secondary-color); 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    font-weight: bold; 
+    cursor: pointer; border-radius: 6px; 
+}
 
 /* --- PIE DE PÁGINA --- */
-footer { background: var(--bg-dark); color: var(--white); text-align: center; padding: 40px 0; border-top: var(--secondary-color) 4px solid; }
-.social-icons a { color: var(--white); font-size: 1.8rem; margin: 0 15px; transition: 0.3s; }
-.social-icons a:hover { color: var(--secondary-color); }
+/* --- FOOTER UNIFICADO --- */
+footer {
+    background: var(--bg-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+    margin-top: auto; /* Empuja el footer siempre al fondo */
+    border-top: var(--secondary-color) 4px solid;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    #boxes, .project-card-row, header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-image-container {
+        height: 200px;
+    }
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 850px) {
