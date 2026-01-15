@@ -17,6 +17,15 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-light);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main, section.container {
+    flex: 1; /* Esto empuja el footer hacia abajo */
 }
 
 .container {
@@ -259,12 +268,11 @@ header .highlight {
 /* --- PIE DE PÁGINA --- */
 /* --- FOOTER UNIFICADO --- */
 footer {
-    background: var(--bg-dark);
-    color: var(--white);
+    background: #2c3e50;
+    color: #ffffff;
     text-align: center;
-    padding: 40px 0;
-    margin-top: auto; /* Empuja el footer siempre al fondo */
-    border-top: var(--secondary-color) 4px solid;
+    padding: 30px 0;
+    border-top: #007bff 4px solid;
 }
 
 .social-icons {
