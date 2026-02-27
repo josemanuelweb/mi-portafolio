@@ -15,6 +15,7 @@ Portafolio personal con formulario de contacto guardado en MySQL (sin Formspree)
 
 - `POST /api/contact.php`
 - Campos esperados: `name`, `email`, `message`
+- Auto-reply: envia email de confirmacion al usuario si `AUTO_REPLY_ENABLED=1`
 
 ## Ver mensajes guardados
 
@@ -37,3 +38,23 @@ ORDER BY id DESC;
   - Completa:
     - `ADMIN_USER` con tu usuario
     - `ADMIN_PASS_HASH` con el hash generado
+
+## Auto reply email
+
+- Configuracion en `config/local.php`:
+  - `AUTO_REPLY_ENABLED` (`1` o `0`)
+  - `SITE_NAME`
+  - `MAIL_FROM`
+  - `MAIL_REPLY_TO`
+  - `AUTO_REPLY_SUBJECT`
+  - `SMTP_ENABLED` (`1` o `0`)
+  - `SMTP_HOST`
+  - `SMTP_PORT`
+  - `SMTP_USER`
+  - `SMTP_PASS`
+  - `SMTP_ENCRYPTION` (`tls`, `ssl` o `none`)
+  - `SMTP_TIMEOUT`
+- Para activar envio real:
+  1. Completa credenciales SMTP reales en `config/local.php`.
+  2. Pon `SMTP_ENABLED` en `1`.
+  3. Mantén `AUTO_REPLY_ENABLED` en `1`.

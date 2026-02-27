@@ -11,6 +11,34 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/mailer.php';
+
+function send_auto_reply(string $toEmail, string $toName): void
+{
+    $enabled = strtolower(env_or_default('AUTO_REPLY_ENABLED', '1'));
+    if (!in_array($enabled, ['1', 'true', 'yes', 'on'], true)) {
+        return;
+    }
+
+    $siteName = env_or_default('SITE_NAME', 'Jose Manuel Portafolio');
+    $fromEmail = env_or_default('MAIL_FROM', 'no-reply@localhost');
+    $replyTo = env_or_default('MAIL_REPLY_TO', 'no-reply@localhost');
+    $subject = env_or_default('AUTO_REPLY_SUBJECT', 'Recibimos tu mensaje');
+
+    $safeName = preg_replace('/[\r\n]+/', ' ', $toName);
+    $safeSiteName = preg_replace('/[\r\n]+/', ' ', $siteName);
+
+    $body = "Hola {$safeName},\n\n";
+    $body .= "Gracias por contactarte con {$safeSiteName}. Recibimos tu mensaje correctamente.\n";
+    $body .= "Te voy a responder dentro de las proximas 24 horas.\n\n";
+    $body .= "Saludos,\n{$safeSiteName}\n";
+
+    // El envio de mail no debe romper el flujo de guardado del formulario.
+    $sent = smtp_send_plain_text($toEmail, $safeName, $subject, $body);
+    if (!$sent) {
+        error_log('No se pudo enviar el auto-reply a ' . $toEmail);
+    }
+}
 
 $name = trim((string) ($_POST['name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -51,6 +79,8 @@ try {
         ':ip_address' => $ipAddress,
         ':user_agent' => $userAgent,
     ]);
+
+    send_auto_reply($email, $name);
 
     echo json_encode(['ok' => true]);
 } catch (Throwable $e) {
