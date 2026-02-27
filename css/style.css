@@ -215,7 +215,6 @@ header .highlight {
 }
 .tag-ia { background: #28a745; }
 .tag-web { background: #e83e8c; }
-.tag-data { background: #fd7e14; }
 
 .tech-tags { 
     display: flex; 
@@ -264,6 +263,27 @@ header .highlight {
     font-weight: bold; 
     cursor: pointer; border-radius: 6px; 
 }
+.contact-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.form-status {
+    margin: 16px 0 0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: none;
+}
+.form-status.is-success {
+    display: block;
+    background: #e9f8ef;
+    color: #1f7a3f;
+}
+.form-status.is-error {
+    display: block;
+    background: #fdecec;
+    color: #a32121;
+}
 
 /* --- PIE DE PÁGINA --- */
 /* --- FOOTER UNIFICADO --- */
@@ -294,7 +314,7 @@ footer {
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
-    #boxes, .project-card-row, header .container {
+    .project-card-row, header .container {
         flex-direction: column;
         text-align: center;
     }
@@ -310,16 +330,6 @@ footer {
     .about-grid { grid-template-columns: 1fr; }
     header .container { flex-direction: column; }
     .navigation ul { margin-top: 15px; }
-}
-
-/* --- AJUSTES FINALES DE ALINEACIÓN --- */
-.contact-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    max-width: 650px;
-    margin: 40px auto;
 }
 
 /* Fuerza a que las etiquetas y campos estén uno debajo del otro */

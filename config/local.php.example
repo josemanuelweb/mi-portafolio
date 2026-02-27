@@ -1,0 +1,14 @@
+<?php
+
+return [
+    // Panel admin
+    'ADMIN_USER' => 'admin',
+    'ADMIN_PASS_HASH' => '',
+
+    // Base de datos (opcional)
+    // 'DB_HOST' => '127.0.0.1',
+    // 'DB_PORT' => '8889',
+    // 'DB_NAME' => 'mi_portafolio',
+    // 'DB_USER' => 'root',
+    // 'DB_PASS' => 'root',
+];

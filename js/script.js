@@ -1,33 +1,81 @@
-var form = document.getElementById("my-form");
-        
+const form = document.querySelector(".contact-form");
+const statusEl = document.getElementById("form-status");
+let statusTimeoutId;
+
+function setStatus(message, type) {
+    if (!statusEl) return;
+    if (statusTimeoutId) {
+        clearTimeout(statusTimeoutId);
+    }
+
+    statusEl.textContent = message;
+    statusEl.classList.remove("is-success", "is-error");
+    statusEl.classList.add(type === "success" ? "is-success" : "is-error");
+
+    statusTimeoutId = setTimeout(() => {
+        statusEl.textContent = "";
+        statusEl.classList.remove("is-success", "is-error");
+    }, 5000);
+}
+
 async function handleSubmit(event) {
     event.preventDefault();
-    var status = document.getElementById("status");
-    var data = new FormData(event.target);
-    
-    fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-        'Accept': 'application/json'
+    const data = new FormData(event.target);
+    const submitButton = form.querySelector("button[type='submit']");
+
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Enviando...";
     }
-    }).then(response => {
-    if (response.ok) {
-        status.style.display = "block"; // Muestra el mensaje de gracias
-        form.style.display = "none";    // Oculta el formulario
-        form.reset();
-    } else {
-        response.json().then(data => {
-        if (Object.hasOwn(data, 'errors')) {
-            alert(data["errors"].map(error => error["message"]).join(", "));
-        } else {
-            alert("Huy! Hubo un problema al enviar el formulario");
+
+    try {
+        const response = await fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            setStatus("Mensaje enviado correctamente. Gracias por contactarme.", "success");
+            return;
         }
-        })
+
+        let payload = null;
+        const contentType = response.headers.get("content-type") || "";
+        if (contentType.includes("application/json")) {
+            payload = await response.json();
+        } else {
+            const rawError = await response.text();
+            if (rawError) {
+                setStatus(`Error del servidor (${response.status}).`, "error");
+                return;
+            }
+        }
+
+        if (payload && payload.message) {
+            setStatus(payload.message, "error");
+            return;
+        }
+
+        if (Object.hasOwn(payload, "errors")) {
+            setStatus(payload.errors.map((error) => error.message).join(", "), "error");
+            return;
+        }
+
+        setStatus(`Hubo un problema al enviar el formulario (HTTP ${response.status}).`, "error");
+    } catch (_error) {
+        setStatus("No se pudo conectar con el servidor. Abre el sitio desde MAMP (localhost), no con file://.", "error");
+    } finally {
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Enviar Mensaje";
+        }
     }
-    }).catch(error => {
-    alert("Huy! Hubo un problema al enviar el formulario");
-    });
 }
-form.addEventListener("submit", handleSubmit)
-   
+
+if (form) {
+    form.addEventListener("submit", handleSubmit);
+}
